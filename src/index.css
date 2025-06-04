@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import "tailwindcss";
+
+
+/* 🌐 Root Variables (for fallback usage or optional inline styles) */
+:root {
+  --font-body: 'Poppins', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body-size: 20px;
+  --font-heading-size: 40px;
+
+  --color-primary: #C7A055;
+  --color-primary1: #EFD9B0;
+  --color-secondary: #F8C900;
+  --color-accent: #00A95A;
+  --color-bg: #F8F8F8;
+  --color-bg1: #012B85;
+  --color-text: #182432;
+  --color-body-text: #000000;
+
+  --cta: #DF0000;
+
+  --hero-top: #F6F2E7;
+  --hero-bottom: #FFF2DA;
+}
+
+/* 🧼 Reset + Base Styling */
+*,
+*::before,
+*::after {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+
+#root {
+  padding: 0 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+
+  font-family: var(--font-body);
+  background-color: white;
+  color: var(--color-text);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+li>a {
+  color: var(--color-primary);
+}
+
+/* 🔗 Links */
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  /* font-weight: 500; */
+}
+
+a:hover {
+  color: #0052cc;
+}
+
+/* 🖱️ Buttons (Optional Global Styling) */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* 🧠 Utility Classes Without Tailwind Config */
+.bg-hero {
+  background: linear-gradient(to bottom, var(--hero-top) 29%, var(--hero-bottom) 100%);
+}
+
+.text-heading {
+  font-size: var(--font-heading-size);
+  font-weight: 600;
+}
+
+.text-body {
+  font-size: var(--font-body-size);
+  font-weight: 400;
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.bg-color{
+  background-color: var(--color-bg);
+}
+.bg-color1{
+  background-color: var(--color-text);
+}
+.bg-cta{
+  background-color: var(--cta);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+.text-primary1 {
+  color: var(--color-primary1);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-color {
+  color: var(--color-body-text);
+}
+
+.text-color1 {
+  color: var(--color-text);
+}
+
+.text-cta{
+  color: var(--cta);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+.border-secondary {
+  border-color: var(--color-secondary);
+}
+.border-accent {
+  border-color: var(--color-accent);
+}
+.border-color{
+  border-color: var(--color-text);
+}
+
+/* 🌓 Optional Dark Mode (based on system) */
+@media (prefers-color-scheme: dark) {
+  body {
+    /* background-color: #111827; */
+    color: black;
+  }
+
+  a {
+    color: black;
+  }
+
+  a:hover {
+    color: var(--color-primary1);
+  }
+}
+
+
+.inverted-border::after {
+  content: '';
+  background: rgb(78, 112, 226);
+  height: 2em;
+  width: 2em;
+  position: absolute;
+  bottom: -2em;
+  right: 0em;
+  border-radius: 0 15px 0 0;
+  box-shadow: 0 -16px 0 0 #ffffff;
+}
+
+.input {
+  @apply w-full px-4 py-2 border border-[#7B7B7B] rounded-md shadow-sm focus:outline-none focus:border-[#7B7B7B] focus:ring-1 focus:ring-[#7B7B7B];
+}
+
