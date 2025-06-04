@@ -3,15 +3,14 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
-  withCredentials: true, // 🔐 Allows sending cookies
+  withCredentials: true, // ✅ Critical for sending JWT cookies across domains
 });
 
-// Optional: intercept responses for global error handling
+// ✅ Optional: Global response error handler
 API.interceptors.response.use(
   (res) => res,
   (err) => {
-    // Optional: global error logging or redirect
-    console.error("API Error:", err.response?.data?.message || err.message);
+    console.error("API Error:", err?.response?.data?.message || err.message);
     return Promise.reject(err);
   }
 );
